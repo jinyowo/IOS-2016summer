@@ -65,7 +65,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" id="7HY-MT-0eg">
                             <connections>
                                 <action selector="addNewWord:" destination="QUx-mH-OwQ" id="wCr-ld-TLp"/>
-                                <segue destination="xMg-SL-zog" kind="push" id="WKk-wa-Cmo"/>
+                                <segue destination="xMg-SL-zog" kind="push" identifier="sgAdd" id="WKk-wa-Cmo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -87,13 +87,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="NKW-GZ-EsO">
-                                <rect key="frame" x="95" y="134" width="97" height="30"/>
+                                <rect key="frame" x="73" y="132" width="232" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yh8-Ld-QQw">
-                                <rect key="frame" x="102" y="184" width="82" height="30"/>
+                                <rect key="frame" x="73" y="180" width="82" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="사진 불러오기"/>
                                 <connections>
@@ -101,13 +101,27 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="np1-kb-O1G">
-                                <rect key="frame" x="40" y="256" width="240" height="128"/>
+                                <rect key="frame" x="14" y="225" width="291" height="195"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fSE-xt-Zdv">
-                                <rect key="frame" x="134" y="398" width="30" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fc3-Xg-7kn">
+                                <rect key="frame" x="15" y="134" width="45" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="add"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xsp-A5-j8x">
+                                <rect key="frame" x="14" y="185" width="47" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fSE-xt-Zdv">
+                                <rect key="frame" x="119" y="451" width="82" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="낱말 추가하기"/>
                                 <connections>
                                     <action selector="addImage:" destination="xMg-SL-zog" eventType="touchUpInside" id="2L2-aE-4n1"/>
                                     <action selector="addWord:" destination="xMg-SL-zog" eventType="touchUpInside" id="XIo-1d-RmW"/>

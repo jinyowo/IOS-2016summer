@@ -68,7 +68,6 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -76,6 +75,6 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+
 
 }

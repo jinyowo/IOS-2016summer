@@ -43,7 +43,7 @@
 		3062E9851D64498100F8E709 /* berry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = berry.png; sourceTree = "<group>"; };
 		3062E9861D64498100F8E709 /* pineapple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pineapple.png; sourceTree = "<group>"; };
 		3062E9871D64498100F8E709 /* watermelon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = watermelon.png; sourceTree = "<group>"; };
-		30A4150A1D6AC2C900698EEF /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		30A4150A1D6AC2C900698EEF /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddItemViewController.swift; path = ../AddItemViewController.swift; sourceTree = "<group>"; };
 		30BA331C1D643D5200DB998F /* Exercise1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Exercise1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30BA331F1D643D5200DB998F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30BA33211D643D5200DB998F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,7 +89,6 @@
 		30BA33131D643D5200DB998F = {
 			isa = PBXGroup;
 			children = (
-				30A4150A1D6AC2C900698EEF /* AddItemViewController.swift */,
 				30BA331E1D643D5200DB998F /* Exercise1 */,
 				30BA33331D643D5200DB998F /* Exercise1Tests */,
 				30BA333E1D643D5200DB998F /* Exercise1UITests */,
@@ -110,6 +109,7 @@
 		30BA331E1D643D5200DB998F /* Exercise1 */ = {
 			isa = PBXGroup;
 			children = (
+				30A4150A1D6AC2C900698EEF /* AddItemViewController.swift */,
 				3062E9851D64498100F8E709 /* berry.png */,
 				3062E9861D64498100F8E709 /* pineapple.png */,
 				3062E9871D64498100F8E709 /* watermelon.png */,
