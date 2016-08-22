@@ -9,15 +9,14 @@
 import UIKit
 
 class ListTableViewController: UITableViewController {
+    
+    @IBOutlet var tabWord: UITableView!
 
-    
-    @IBOutlet var listWord: UITableView!
-    
     var items = ["berry", "pineapple", "watermelon"]
     var itemsImg = ["berry.png", "pineapple.png", "watermelon.png" ]
     
-    
     @IBOutlet weak var btnAdd: UIBarButtonItem!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +49,7 @@ class ListTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("listWord", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("wordCell", forIndexPath: indexPath)
 
         cell.textLabel?.text = items[indexPath.row]
         cell.imageView?.image = UIImage(named: itemsImg[indexPath.row])
@@ -73,8 +72,9 @@ class ListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             items.removeAtIndex(indexPath.row)
+            
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
