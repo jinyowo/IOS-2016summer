@@ -1,0 +1,27 @@
+ios data관리
+
+1. global 지속적 데이터 : data base 
+(core data) <-> class
+
+2. 데이터 주고받을 때 : NavigationBarController 사용
+(화면전화 + 프로토콜로 데이터 주고받음)
+
+<DataBase>
+file에 일일이 데이터기록 <-> database
+(코딩능력에따라 속도차이
+ file system-속도저하
+ 매번반복코딩)
+
+2tier, 3tier : 원격데이터베이스사용
+
+<SQLite> 
+.db파일과 library만 있어도 데이터베이스를 쓸수있도록
++ 모바일환경에서 많이사용
+
+*data type
+1. 물리적공간
+2. 효율성
+
+
+
+

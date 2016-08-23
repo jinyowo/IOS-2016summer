@@ -1,0 +1,21 @@
+SQLite & Coredata
+
+*공통점
+1. table(Entity)
+2. row(object)
+3. column(attribute)
+4. index key(많은 col들 중 어느것이 메모리에 올라갈지)
+5. relations
+6. 지속적 사용가능
+
+*coredata 장점/단점
+1. 편하다 (convert to class)
+2. library지원(insert, save, update)
+
+3. db에서의 여러가지 기능 사용하기 어렵
+
+*SQLite 장점/단점
+1. 빠른업데이트
+2. db에서의 여러가지 기능 사용하기 좋음
+
+2. 사용이 불편하다
