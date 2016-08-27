@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G31" minimumToolsVersion="Automatic">
+    <entity name="Relationship" representedClassName=".Relationship" parentEntity="Student" syncable="YES">
+        <attribute name="student_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="subject_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Student" representedClassName=".Student" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Subject" representedClassName=".Subject" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="professor" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Student" positionX="-299" positionY="-166" width="128" height="88"/>
+        <element name="Subject" positionX="27" positionY="-157" width="128" height="88"/>
+        <element name="Relationship" positionX="-146" positionY="-99" width="128" height="73"/>
+    </elements>
+</model>
