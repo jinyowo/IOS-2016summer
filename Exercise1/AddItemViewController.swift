@@ -9,17 +9,23 @@
 import UIKit
 import MobileCoreServices //아이폰 기본앱의 기능들
 
+//delegate프로토콜(약속), 함수정의만가능
+protocol AddDelegate {
+    func didAddDone(controller:AddItemViewController, title: String, image: UIImage)
+}
+
 class AddItemViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     
+    @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var wordName: UITextField!
     
     var captureImg : UIImage!
     var flagImageSave = false
     let imagePicker: UIImagePickerController! = UIImagePickerController()
+    var delegate: AddDelegate?  //? : nil값 허용
     
     
-    @IBOutlet weak var imgView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -64,8 +70,13 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
     }
     
     @IBAction func addWord(sender: UIButton) {
+        if(delegate != nil)
+        {
+            delegate?.didAddDone(self, title: wordName.text!,image: captureImg! )
+        }
+        wordName.text=""
         
-        
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
 
     // MARK: - Navigation

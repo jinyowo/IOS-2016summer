@@ -47,13 +47,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="wordCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="wordCell" id="pbt-HY-sD6">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="wordCell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="wordCell" id="pbt-HY-sD6">
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pbt-HY-sD6" id="Hfg-Jj-cm7">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Mku-K7-ACD" kind="push" identifier="sgDetail" id="ckB-Dy-s2H"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -77,6 +80,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rZN-5m-3Ei" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1678" y="-212"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="tlD-ZN-YZY">
+            <objects>
+                <viewController id="Mku-K7-ACD" customClass="DetailViewController" customModule="Exercise1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ofh-VV-p6b">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="X3x-U3-PlV">
+                                <rect key="frame" x="0.0" y="120" width="320" height="388"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oZA-JM-LZv">
+                                <rect key="frame" x="20" y="82" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eIM-0k-Xbp"/>
+                    <connections>
+                        <outlet property="imgView" destination="X3x-U3-PlV" id="hxx-ah-4Qc"/>
+                        <outlet property="lblTitle" destination="oZA-JM-LZv" id="lys-5l-fty"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7aW-2V-aMg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1977" y="460"/>
         </scene>
         <!--Add Item View Controller-->
         <scene sceneID="hOc-t8-0M6">
@@ -127,6 +162,11 @@
                                     <action selector="addWord:" destination="xMg-SL-zog" eventType="touchUpInside" id="XIo-1d-RmW"/>
                                     <action selector="btnAdd:" destination="xMg-SL-zog" eventType="touchUpInside" id="v9j-zv-CYd"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8tN-tL-75c">
+                                <rect key="frame" x="176" y="180" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="사진 찍기"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

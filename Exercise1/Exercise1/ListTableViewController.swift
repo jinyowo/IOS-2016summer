@@ -8,15 +8,20 @@
 
 import UIKit
 
-class ListTableViewController: UITableViewController {
+protocol DetailDelegate {
+    func setData(controller: ListTableViewController, title: String, image: UIImage)
+}
+
+
+class ListTableViewController: UITableViewController, AddDelegate {
     
     @IBOutlet var tabWord: UITableView!
-
-    var items = ["berry", "pineapple", "watermelon"]
-    var itemsImg = ["berry.png", "pineapple.png", "watermelon.png" ]
-    
     @IBOutlet weak var btnAdd: UIBarButtonItem!
 
+    var items = ["berry", "pineapple", "watermelon"]
+    var itemImages = [UIImage] ()//["berry.png", "pineapple.png", "watermelon.png" ]
+    
+    var delegate: DetailDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +33,14 @@ class ListTableViewController: UITableViewController {
          self.navigationItem.leftBarButtonItem = self.editButtonItem()
         
         btnAdd.title = "+"
+        
+        let image_berry = UIImage (named: "berry.png")
+        itemImages.append(image_berry!)
+        let image_pine = UIImage (named: "pineapple.png")
+        itemImages.append(image_pine!)
+        let image_watermelon = UIImage (named: "watermelon.png")
+        itemImages.append(image_watermelon!)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,7 +65,7 @@ class ListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("wordCell", forIndexPath: indexPath)
 
         cell.textLabel?.text = items[indexPath.row]
-        cell.imageView?.image = UIImage(named: itemsImg[indexPath.row])
+        cell.imageView?.image = itemImages[indexPath.row]
         // Configure the cell...
 
         return cell
@@ -87,23 +100,20 @@ class ListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
         let itemToMove = items[fromIndexPath.row]
         
-        let itemImageToMove = itemsImg[fromIndexPath.row]
-        
-        
+        let itemImageToMove = itemImages[fromIndexPath.row]
         
         items.removeAtIndex(fromIndexPath.row)
-        
-        itemsImg.removeAtIndex(fromIndexPath.row)
-        
-        
+        itemImages.removeAtIndex(fromIndexPath.row)
         
         items.insert(itemToMove, atIndex: toIndexPath.row)
-        
-        itemsImg.insert(itemImageToMove, atIndex: toIndexPath.row)
+        itemImages.insert(itemImageToMove, atIndex: toIndexPath.row)
 
     }
  
-
+    func didAddDone(controller: AddItemViewController, title: String, image: UIImage ) {
+        items.append(title)
+        itemImages.append(image)
+    }
     /*
     // Override to support conditional rearranging of the table view.
     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -112,14 +122,32 @@ class ListTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "sgAdd"
+        {
+            let addViewController = segue.destinationViewController as! AddItemViewController
+        
+            addViewController.delegate = self
+        }
+        else if segue.identifier == "sgDetail"
+        {
+            let detailViewController = segue.destinationViewController as! DetailViewController
+        
+            self.delegate = detailViewController
+        
+            //cell이 UITableViewCell형태 일때만
+            let cell = sender as! UITableViewCell
+            let idx = tableView.indexPathForCell(cell)
+            
+            delegate?.setData(self, title: items[(idx?.row)!], image: itemImages[(idx?.row)!])
+            
+            
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
 
 }
